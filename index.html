@@ -3,10 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div class="wrapper">
+        <!--This is my navbar-->
+        <div class="ig-navbar">
+            <div class="brand">
+                <i class="bi bi-instagram"></i> Instagram
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-success btn-sm px-3">Create a New Post</button>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       <i class="bi bi-gear-fill"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--This is my toolbar-->
+        <div class="toolbar">
+            <button class="view-btn active" id="btn-grid" onclick="setView('grid')">
+                <i class="bi bi-grid-3x3-gap-fill"></i>
+            </button>
+            <button class="view-btn" id="btn-list" onclick="setView('list')">
+                <i class="bi bi-stop-fill"></i>
+            </button>
+        </div>
+
+        <!--Here goes the content of my feed-->
+        <div class="container-fluid px-1 px-md-3 mt-1" style="max-width: 1080px; margin-left: auto; margin-right: auto;">
+            <!--This should be the grid-->
+            <div id="grid-view">
+                <div class="row">
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko1.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko2.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko3.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko4.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko5.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko6.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko7.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./rocko8.jpeg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 p-1">
+                        <div class="grid-item">
+                            <img src="./cover.jpg" alt="">
+                            <div class="overlay">
+                                <span><i class="bi bi-heart-fill"></i>150</span>
+                                <span><i class="bi bi-chat-fill"></i>10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--This should be the list-->
+            <div id="list-view" class="px-2" style="min-width: 600px; margin: 0 auto;">
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <div class="list-card-header">
+                        <span class="list-card-date">02/04</span>
+                    </div>
+                    <img src="./rocko1.jpeg" class="list-thumb" alt="">
+                    <div class="list-card-footer">
+                        <div class="list-caption">
+                            This little model knows how to work the camera! That confident stance and those soulful eyes - Rocko's got natural talent. Already practicing his best angles for Instagram 📸 #PuppyModel #TooHandsome
+                        </div>
+                        <div class="list-meta">hace 1 hora</div>
+                        <div class="list-stats">
+                            <span class="bi bi-heart">1.2K</span>
+                            <span class="bi bi-chat">22</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+    function setView(view) {
+    document.getElementById('grid-view').style.display = view === 'grid' ? 'block' : 'none';
+    document.getElementById('list-view').style.display = view === 'list' ? 'block' : 'none';
+    document.getElementById('btn-grid').classList.toggle('active', view === 'grid');
+    document.getElementById('btn-list').classList.toggle('active', view === 'list');
+}
+
+</script>
 </body>
 </html>
