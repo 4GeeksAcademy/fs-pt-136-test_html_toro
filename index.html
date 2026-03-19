@@ -16,7 +16,10 @@
                 <i class="bi bi-instagram"></i> Instagram
             </div>
             <div class="d-flex gap-2">
-                <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#newPostModal">Create a New Post</button>
+                <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#newPostModal">
+                    <span class="d-none d-md-inline">Create a New Post</span>
+                    <i class="bi bi-plus-lg d-md-none"></i>
+                </button>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                        <i class="bi bi-gear-fill"></i>
@@ -141,7 +144,7 @@
             </div>
 
             <!--This should be the list-->
-            <div id="list-view" class="px-2" style="min-width: 600px; margin: 0 auto;">
+            <div id="list-view" class="px-2">
                 <div class="list-card">
                     <div class="list-card-header">
                         <span class="list-card-date">02/04</span>
